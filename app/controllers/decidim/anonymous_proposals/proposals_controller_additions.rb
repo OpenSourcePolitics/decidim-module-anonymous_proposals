@@ -7,7 +7,7 @@ module Decidim
       extend ActiveSupport::Concern
 
       included do
-        helper_method :allow_anonymous_proposals?, :is_anonymous?, :anonymous_group
+        helper_method :allow_anonymous_proposals?, :anonymous?, :anonymous_group
 
         skip_before_action :authenticate_user!, if: :allow_anonymous_proposals?
       end
@@ -18,7 +18,7 @@ module Decidim
         anonymous_group.present? && component_settings.anonymous_proposals_enabled?
       end
 
-      def is_anonymous?
+      def anonymous?
         allow_anonymous_proposals? && (current_user.blank? || @proposal&.authored_by?(anonymous_group))
       end
 

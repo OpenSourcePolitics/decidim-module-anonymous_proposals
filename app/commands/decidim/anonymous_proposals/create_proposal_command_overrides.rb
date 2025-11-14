@@ -10,10 +10,10 @@ module Decidim
 
       def initialize(form, current_user, coauthorships = nil)
         @form = form
-        @selected_user_group = Decidim::UserGroup.find_by(organization: organization, id: form.user_group_id)
+        @selected_user_group = Decidim::UserGroup.find_by(organization:, id: form.user_group_id)
         @is_anonymous = allow_anonymous_proposals? && (current_user.blank? || @selected_user_group == anonymous_group)
 
-        set_current_user(current_user)
+        assign_current_user(current_user)
         @coauthorships = coauthorships
       end
 

@@ -2,6 +2,9 @@
 en:
   decidim:
     anonymous_proposals:
+      anonymous_author_notice: "Your proposal will be published anonymously"
+      anonymous_author_explanation: "Your proposal will appear as authored by '%{anonymous_label}'."
+      register_to_publish_with_name_html: "%{register_link} or %{login_link} to publish under your name."
       new_session: sign in
       register: Register
       shared:

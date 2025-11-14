@@ -1,22 +1,24 @@
+# frozen_string_literal: true
+
 module Decidim
   module AnonymousProposals
     module AnonymousBehaviorCommandsConcern
       private
 
-      def is_anonymous?
+      def anonymous?
         @is_anonymous
       end
 
       def anonymous_group
-        Decidim::UserGroup.where(organization: organization).anonymous.first
+        Decidim::UserGroup.where(organization:).anonymous.first
       end
 
-      def set_current_user(user)
-        @current_user = is_anonymous? ? anonymous_group : user
+      def assign_current_user(user)
+        @current_user = anonymous? ? anonymous_group : user
       end
 
       def user_group
-        return if is_anonymous?
+        return if anonymous?
 
         @selected_user_group
       end

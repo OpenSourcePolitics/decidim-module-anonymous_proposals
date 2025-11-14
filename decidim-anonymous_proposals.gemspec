@@ -10,7 +10,7 @@ Gem::Specification.new do |s|
   s.email = ["entantoencuanto.rb@gmail.com"]
   s.license = "AGPL-3.0"
   s.homepage = "https://github.com/PopulateTools/decidim-module-anonymous_proposals"
-  s.required_ruby_version = ">= 2.6"
+  s.required_ruby_version = ">= 3.2.0"
 
   s.name = "decidim-anonymous_proposals"
   s.summary = "A decidim anonymous_proposals module"
@@ -19,5 +19,5 @@ Gem::Specification.new do |s|
   s.files = Dir["{app,config,lib}/**/*", "LICENSE-AGPLv3.txt", "Rakefile", "README.md"]
 
   s.add_dependency "decidim-core", Decidim::AnonymousProposals.decidim_version
-  s.add_dependency "deface", "~> 1.5"
+  s.add_dependency "deface", "~> 1.9"
 end
