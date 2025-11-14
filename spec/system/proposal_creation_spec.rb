@@ -47,7 +47,7 @@ describe "Create proposal" do
     it "shows informative message instead of selector" do
       expect(page).to have_no_content("Create proposal as")
       expect(page).to have_content("Your proposal will be published anonymously")
-      expect(page).to have_content("Anonymous user")
+      expect(page).to have_content(anonymous_group.name)
       expect(page).to have_link("Register")
       expect(page).to have_link("sign in")
     end

@@ -49,7 +49,7 @@ module Decidim
           content_tag(:p, class: "mb-2") do
             concat content_tag(:strong, "📝 #{t("anonymous_author_notice", scope: "decidim.anonymous_proposals")}")
             concat " "
-            concat t("anonymous_author_explanation", scope: "decidim.anonymous_proposals", anonymous_label: anonymous_group_label)
+            concat t("anonymous_author_explanation", scope: "decidim.anonymous_proposals", anonymous_label: anonymous_group.name || anonymous_group_label)
           end +
             content_tag(:p, class: "mb-0 text-sm") do
               t(
