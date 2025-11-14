@@ -133,7 +133,6 @@ describe "Create proposal" do
         expect(page).to have_content("Do you want other participants to follow you and comment on your proposal?")
       end
 
-      # Pour les utilisateurs NON connectés : message informatif
       it_behaves_like "shows anonymous info message and creates proposal"
     end
 

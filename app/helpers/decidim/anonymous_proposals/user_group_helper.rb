@@ -24,10 +24,8 @@ module Decidim
 
       def render_anonymous_field(form, name, options)
         if user_signed_in?
-          # Utilisateur connecté : afficher le sélecteur avec option anonyme
           render_select_with_anonymous(form, name, options)
         else
-          # Utilisateur non connecté : afficher un message informatif
           render_anonymous_info_message(form, name)
         end
       end
@@ -47,7 +45,6 @@ module Decidim
       end
 
       def render_anonymous_info_message(form, name)
-        # Message informatif
         info_message = content_tag(:div, class: "callout secondary") do
           content_tag(:p, class: "mb-2") do
             concat content_tag(:strong, "📝 #{t("anonymous_author_notice", scope: "decidim.anonymous_proposals")}")
@@ -64,8 +61,6 @@ module Decidim
             end
         end
 
-        # Champ caché pour soumettre le user_group_id automatiquement
-        # IMPORTANT: Le mettre APRÈS le message pour qu'il soit bien dans le DOM
         hidden_field = form.hidden_field(name, value: anonymous_group&.id)
 
         info_message + hidden_field
