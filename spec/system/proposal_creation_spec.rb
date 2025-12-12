@@ -59,7 +59,7 @@ describe "Create proposal" do
       expect(Decidim::Proposals::Proposal.from_author(anonymous_group).count).to eq(0)
 
       click_on "Continue"
-
+      sleep 2
       expect(Decidim::Proposals::Proposal.from_author(anonymous_group).count).to eq(1)
 
       proposal = Decidim::Proposals::Proposal.from_author(anonymous_group).last
