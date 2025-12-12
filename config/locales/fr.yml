@@ -27,11 +27,16 @@ fr:
     components:
       anonymous_proposals:
         name: Propositions anonymes
+      pagination:
+        page_title: "%{component_name} - Page %{current_page} sur %{total_pages}"
       proposals:
         settings:
           global:
             anonymous_proposals_enabled: Autoriser les utilisateurs anonymes à créer des propositions
     proposals:
       proposals:
+        index:
+          collaborative_drafts_list: Accéder aux brouillons collaboratifs
+          new_proposal: Nouvelle proposition
         new:
           anonymous_user: "Utilisateur anonyme"

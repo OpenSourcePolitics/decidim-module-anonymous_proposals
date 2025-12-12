@@ -24,7 +24,14 @@ de:
     components:
       anonymous_proposals:
         name: AnonymousProposals
+      pagination:
+        page_title: "%{component_name} - Seite %{current_page} von %{total_pages}"
       proposals:
         settings:
           global:
             anonymous_proposals_enabled: Anonyme Benutzer können Vorschläge erstellen
+    proposals:
+      proposals:
+        index:
+          collaborative_drafts_list: Greifen Sie auf gemeinsame Entwürfe zu
+          new_proposal: Neuer Vorschlag

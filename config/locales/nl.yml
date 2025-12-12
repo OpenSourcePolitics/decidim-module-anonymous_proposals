@@ -1,0 +1,10 @@
+nl:
+  decidim:
+    components:
+      pagination:
+        page_title: "%{component_name} - Pagina %{current_page} van de %{total_pages}"
+    proposals:
+      proposals:
+        index:
+          collaborative_drafts_list: Toegang tot samenwerkende concepten
+          new_proposal: Nieuw voorstel
