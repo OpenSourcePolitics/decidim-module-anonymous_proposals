@@ -1,14 +1,13 @@
-<!-- replace "erb[silent]:contains('if current_organization.user_groups_enabled?')" -->
+<!-- replace "erb[silent]:contains('if current_organization.user_groups_enabled? && Decidim::UserGroups::ManageableUserGroups')" closing_selector "erb[silent]:contains('end'):nth-of-type(1)" -->
 
-<% if current_organization.user_groups_enabled? && Decidim::UserGroups::ManageableUserGroups.for(current_user).verified.any? %>
-  <% if @proposal.draft? %>
-    <div class="field">
-      <%= user_group_with_anonymous_select_field form, :user_group_id, select_anonymous: @proposal.persisted? && is_anonymous? %>
-    </div>
+<% if current_organization.user_groups_enabled? %>
+  <% if !allow_anonymous_proposals? %>
+    <% if Decidim::UserGroups::ManageableUserGroups.for(current_user).verified.any? %>
+      <%= user_group_select_field form, :user_group_id %>
+    <% end %>
   <% else %>
-    <% if !is_anonymous? %>
-      <div class="field">
-        <%= user_group_select_field form, :user_group_id %>
-      </div>
+    <% if new_proposal || @proposal.draft? %>
+      <%= user_group_with_anonymous_select_field form, :user_group_id, select_anonymous: @proposal&.persisted? && anonymous? %>
     <% end %>
   <% end %>
+<% end %>

@@ -6,10 +6,10 @@ namespace :decidim_anonymous_proposals do
     organizations = args.organization_id.present? ? Decidim::Organization.where(id: args.organization_id) : Decidim::Organization.all
 
     organizations.each do |organization|
-      if Decidim::UserGroup.where(organization: organization).anonymous.exists? && (update_args = args.to_h.slice(:name, :nickname, :email)).present?
-        Decidim::UserGroup.where(organization: organization).anonymous.first.update(update_args)
+      if Decidim::UserGroup.where(organization:).anonymous.exists? && (update_args = args.to_h.slice(:name, :nickname, :email)).present?
+        Decidim::UserGroup.where(organization:).anonymous.first.update(update_args)
       else
-        Decidim::UserGroup.where(organization: organization).create!(
+        Decidim::UserGroup.where(organization:).create!(
           name: args.name || "Anonymous",
           nickname: args.nickname || "anonymous",
           email: args.email || "anonymous@example.org",

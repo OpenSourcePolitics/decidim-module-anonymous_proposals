@@ -1,2 +1,0 @@
-<!-- replace "erb[loud]:contains('new_proposal_path')" -->
-<%= link_to new_proposal_path, class: "button button__xl button__secondary w-full", data: { "redirect_url" => new_proposal_path } do %>

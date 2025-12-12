@@ -1,0 +1,42 @@
+fr:
+  decidim:
+    anonymous_proposals:
+      anonymous_author_notice: "Votre proposition sera publiée de manière anonyme"
+      anonymous_author_explanation: "Votre proposition apparaîtra comme étant rédigée par '%{anonymous_label}'."
+      register_to_publish_with_name_html: "%{register_link} ou %{login_link} sur la plateforme pour publier sous votre nom."
+      new_session: "connectez-vous"
+      register: "Inscrivez-vous"
+      shared:
+        anonymous_proposals_announcement:
+          text_html: "<p><strong>%{registration_link} ou %{new_session_link} sur
+            la plateforme pour ne manquer aucune actualité du processus participatif</strong>. Si
+            vous publiez votre proposition en tant qu'utilisateur enregistré, vous pourrez suivre
+            d'autres participants et interagir avec eux, commenter et participer à
+            l'échange d'opinions de chaque proposition, et montrer votre soutien ou votre intérêt
+            en adhérant aux propositions que vous jugez pertinentes. Vous pourrez également choisir de
+            recevoir des notifications chaque fois que quelqu'un soutient ou commente votre
+            proposition. De plus, vous aurez la possibilité de recevoir une newsletter
+            avec toutes les mises à jour.</p> <p><em>« Mais je ne veux pas que mon nom soit reconnu »</em> :
+            Dans ce cas, vous pouvez vous inscrire avec une identité anonyme avec laquelle
+            publier votre proposition tout en bénéficiant de tous les avantages d'être enregistré
+            sur la plateforme.</p>"
+        anonymous_proposals_new_announcement:
+          text_html: "<p>Souhaitez-vous que d'autres participants vous suivent et commentent
+            votre proposition ?<strong> %{registration_link} ou %{new_session_link}
+            sur la plateforme</strong>.</p>"
+    components:
+      anonymous_proposals:
+        name: Propositions anonymes
+      pagination:
+        page_title: "%{component_name} - Page %{current_page} sur %{total_pages}"
+      proposals:
+        settings:
+          global:
+            anonymous_proposals_enabled: Autoriser les utilisateurs anonymes à créer des propositions
+    proposals:
+      proposals:
+        index:
+          collaborative_drafts_list: Accéder aux brouillons collaboratifs
+          new_proposal: Nouvelle proposition
+        new:
+          anonymous_user: "Utilisateur anonyme"
